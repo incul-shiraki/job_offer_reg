@@ -178,6 +178,7 @@ class CorporationController extends Controller
  		$recruit_oi->recruiting_plan_count = $request->recruiting_plan_count;
  		$recruit_oi->PV_count = 1;
  		$recruit_oi->calculation_method_performance_fee = $request->successful_reward_calculation_method;
+ 		$recruit_oi->Theoretical_annual = $request->ratio;
  		$recruit_oi->Theoretical_annual_income = $request->terms_at_rate;
  		$recruit_oi->fixed_reward = $request->fixed_reward_amount;
  		$recruit_oi->refund_policy = $request->refund_provision;
@@ -254,34 +255,16 @@ class CorporationController extends Controller
 
   public function update(Request $request, $id)
   {
-		 return redirect('job_offer_registration');
-
+		// dd($request);
+		// dd($id);
 		if($request->get('back')){
 			return redirect('job_offer_registration')->withInput();
 		}else{
 		// DBオブジェクト生成
-		$recruit_oi =  \App\Models\RecruitOfferInfo::where('id', $id);
+		$recruit_oi =  \App\Models\RecruitOfferInfo::where('id', $id)->first();
 		$recruit_company_no = \App\Models\RecruitCompany::where('corporation_name', $request->company_name)->first();
-		
-		// 募集企業登録で登録していない企業を登録
-		$recruit_company->corporations_id = 1;
-		$recruit_company->corporation_name = $request->company_name;
-		$recruit_company->address = $request->comp_add02;
-		$recruit_company->home_page = $request->company_hp;
-		$recruit_company->employee_number = $request->employee_number;
-		$recruit_company->establish_year = substr($request->foundation_date, 0,4);
-		$recruit_company->establish_month = substr($request->foundation_date,-2);
-		$recruit_company->company_profile = $request->company_overview;
-		$recruit_company->business_content = $request->business_guidance;
-		$recruit_company->prefecture = $request->comp_add01;
-		$recruit_company->industry1 = $request->job1c;
-		$recruit_company->industry2 = $request->job2c;
-		$recruit_company->corporation_logo = $request->company_logo;
-
-		$recruit_company->save();
-		// 一覧にリダイレクト
-		 return redirect('job_offer_registration');
-		}
+		// dd($recruit_company_no);
+		// dd($recruit_oi);
 
  		// $recruit_oi->corporations_id = $request->1;
  		$recruit_oi->corporations_id = 1;
@@ -291,7 +274,6 @@ class CorporationController extends Controller
  		$recruit_oi->job_title = $request->job_offer_title;
 		$recruit_oi->job_feature= implode(",", $request->feature_offer_point); 
  		$recruit_oi->image_main = $request->main_image->store('storage/' . $recruit_oi->corporations_id);
-
 
 		$recruit_oi->marketing_use = $request->customer_acquisition_use_availability;
  		$recruit_oi->job_requirement = $request->required_requirement;
@@ -356,7 +338,8 @@ class CorporationController extends Controller
 		$recruit_oi->save();
 		// 一覧にリダイレクト
 		 return redirect('job_offer_registration');
-
+		
+		}
 
   }
 

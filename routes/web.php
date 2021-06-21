@@ -27,17 +27,6 @@ Route::get('request/', [
   'as' => 'insert.index'
 ]);
  
-# 確認画面
-// Route::post('request/confirm', [
-//   'uses' => 'InsertDemoController@confirm',
-//   'as' => 'insert.confirm'
-// ]);
-
-
-// Route::post('request/finish', [
-//   'uses' => 'InsertDemoController@finish',
-//   'as' => 'insert.finish'
-// ]);
 
 Route::get('student/list','StudentController@getIndex');
 

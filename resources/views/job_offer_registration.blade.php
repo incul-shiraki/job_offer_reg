@@ -76,7 +76,7 @@
 										@if ($status === 1)
 											<form action="/posts" method="post" enctype="multipart/form-data">
 										@elseif ($status  === 2)
-											<form action="/update" method="post" enctype="multipart/form-data">
+											<form action="{{url('/update',$rec_info_re->id)}}" method="post" enctype="multipart/form-data">
 										@endif
                       {{ csrf_field() }}
                       <div class="form-group row"><label for="company_name" class="col-sm-3 col-form-label">会社名&nbsp;<span class="text-danger required">*</span></label>
@@ -430,7 +430,7 @@
                             <input type="text" class="col-sm-2 form-control" name="can_apply_age_under" id="can_apply_age_under" value="{{ old('can_apply_age_under') }}"  >
                             <b>&nbsp;歳</b> 
                           @else
-                            <input type="text" class="col-sm-2 form-control" name="can_apply_age_more" id="can_apply_age_more" value="{{$rec_info_re['applicable_age_to']}}">
+                            <input type="text" class="col-sm-2 form-control" name="can_apply_age_more" id="can_apply_age_more" value="{{$rec_info_re['applicable_age_from']}}">
                             <b>&nbsp;〜&nbsp;</b>
                             <input type="text" class="col-sm-2 form-control" name="can_apply_age_under" id="can_apply_age_under" value="{{$rec_info_re['applicable_age_to']}}">
                             <b>&nbsp;歳</b> 
@@ -1418,31 +1418,31 @@ $(function(){
 console.log(@json($rec_info_re[0]));
 console.log(temp);
 		document.getElementById('company_name').innerHTML = temp['corp_name'];
-    $('#company_name_h').val(@json($rec_info_re[0]['corp_name']));
+    $('#company_name_h').val(temp['corp_name']);
     document.getElementById('comp_add02').innerHTML = temp['address'];
-    $('#comp_add02_h').val(@json($rec_info_re[0]['address']));
+    $('#comp_add02_h').val(temp['address']);
     document.getElementById('company_hp').innerHTML = temp['home_page'];
-    $('#company_hp_h').val(@json($rec_info_re[0]['home_page']));
+    $('#company_hp_h').val(temp['home_page']);
     document.getElementById('employee_number').innerHTML = temp['employee_number'];
-    $('#employee_number_h').val(@json($rec_info_re[0]['employee_number']));
+    $('#employee_number_h').val(temp['employee_number']);
     document.getElementById('foundation_date').innerHTML = String(temp['establish_year']) + '年' + String(temp['establish_month']) + '月';
-    $('#foundation_date_h').val(@json($rec_info_re[0]['establish_year']) + '-' + temp['establish_month']);
+    $('#foundation_date_h').val(temp['establish_year'] + '-' + temp['establish_month']);
     document.getElementById('company_overview').innerHTML = temp['company_profile'];
-    $('#company_overview_h').val(@json($rec_info_re[0]['company_profile']));
+    $('#company_overview_h').val(temp['company_profile']);
     document.getElementById('business_guidance').innerHTML = temp['business_content'];
-    $('#business_guidance_h').val(@json($rec_info_re[0]['business_content']));
+    $('#business_guidance_h').val(temp['business_content']);
     //都道府県
 		document.getElementById('comp_add01').innerHTML = pref[temp['prefecture']];
-    $('#comp_add01_h').val(@json($rec_info_re[0]['prefecture']));
+    $('#comp_add01_h').val(temp['prefecture']);
     //業界1
 		document.getElementById('job1c').innerHTML = first[temp['industry1'] -1]['name'];
-    $('#job1c_h').val(@json($rec_info_re[0]['industry1']));
+    $('#job1c_h').val(temp['industry1']);
     //業界2
 		document.getElementById('job2c').innerHTML = second[temp['industry2'] -1]['name']; 
-    $('#job2c_h').val(@json($rec_info_re[0]['industry2']));
+    $('#job2c_h').val(temp['industry2']);
 		//ロゴ
     document.getElementById('image').src = temp['logo'].replace('public','storage');
-    $('#image_h').val(@json($rec_info_re[0]['logo']));
+    $('#image_h').val(temp['logo']);
 
 	}
 	//募集企業選択プルダウンリストの表示制御
