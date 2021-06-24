@@ -67,7 +67,7 @@
               <div class="card">
                 <div class="card-header">
 									<h3 class='card_title' style="display: inline;" >募集企業</h3>
-									<a href='#' id="open_corp_modal" style="float: right; display: inline;" data-toggle="modal" data-target="#Modal_comp_edit")">
+									<a href='#' id="open_corp_modal" style="float: right; display: inline;" data-toggle="modal" data-target="#Modal_comp_edit">
 										<img src="{{asset('storage/img/icon.png')}}" width="20" height="20" >
 									</a>
                 </div>
@@ -1002,7 +1002,7 @@
 													<label name="ratio" class="form-control" id="edit_ratio"></label>
                         </div>
                       </div>
-                      <div class="form-group row chois_ratio" ><label for="terms_at_rate" class="col-sm-3 col-form-label">割合時の規約&nbsp;<span class="text-danger required">*</span></label>
+                      <div class="form-group row chois_ratio" ><label for="terms_at_rate" class="col-sm-3 col-form-label">理論年収の定義&nbsp;<span class="text-danger required">*</span></label>
                         <div class="col-sm-9">
 													<textarea name="terms_at_rate" class="form-control" id="edit_terms_at_rate" readonly rows="8"></textarea>
                         </div>

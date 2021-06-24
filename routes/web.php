@@ -45,8 +45,8 @@ Route::get('/contact', 'PagesController@getContact');
   	Route::get('delete/{id}/', 'StudentController@us_delete'); //削除
   	Route::post('delete/{id}/', 'StudentController@us_delete'); //削除
     Route::get('show/{id}', 'StudentController@show'); //編集
-
 	});
+
 	Route::get('/job_offer_registration','CorporationController@new');
 	Route::post('/update/{id}','CorporationController@update');
 	Route::get('/job_offer_registration/{id}','CorporationController@edit');
@@ -58,4 +58,6 @@ Route::get('/contact', 'PagesController@getContact');
 	Route::post('/corp_cre','CorporationController@create_corp');
 	Route::post('/corp_edit','CorporationController@edit_corp');
  	Route::get('/remaking','CorporationController@get_content'); //確認
+
+ 	Route::get('/job_detail/{id}','CorporationController@show_offer_detail'); //確認
 

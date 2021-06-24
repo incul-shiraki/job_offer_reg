@@ -188,64 +188,13 @@
 
 @section('css')
 
-    <style>
-
-        .right-box {
-            width: calc(100% - 20px);
-            margin: 10px;
-            border: solid 1px gray;
-        }
-
-        .tabs {
-            display: flex;
-            flex-wrap: nowrap;
-            overflow: hidden;
-        }
-
-        .tabs .tab {
-            width: calc(50%);
-            text-align: center;
-            cursor: pointer;
-            background-color: orange;
-            overflow: hidden;
-            color: white;
-        }
-
-        .tabs .tab:last-child {
-            width: 50%;
-            border-right: none;
-        }
-
-        .tab-active {
-            background-color: white !important;
-            overflow: hidden;
-            color: #444 !important;
-        }
-
-        .right-box .horizontal label {
-            width: 100%;
-            display: inline-flex;
-        }
-
-        .right-box .horizontal label>span {
-            width: 120px;
-            padding: 8px;
-        }
-
-        .right-box .horizontal input,
-        .right-box .horizontal select {
-            width: calc(100% - 128px);
-        }
-
-    </style>
-
 @endsection
 
 @section('js')
 
     <script src="/js/components/v-error.js"></script>
     <script>
-
     </script>
+
 @endsection
 

@@ -396,8 +396,9 @@ class CorporationController extends Controller
 
 
 	public function get_content(Request $request){
+		// dd($request);
 		//
-		$info_re = AllRecInfo::findOrFail(1); 
+		$info_re = AllRecInfo::findOrFail($request->movecopy); 
 		$rec_info = RecruitOfferInfo::select('id','job_title')->get();
 		// $rec_info_re = AllRecInfo::find($request); 
 		$rec_info_re = AllRecInfo::where('id', $request->movecopy)->first(); 
@@ -408,7 +409,7 @@ class CorporationController extends Controller
 		$prefectures = config('constants.prefectures');
 		$charmpoints = config('constants.charmpoints');
 		$recruit_company = RecruitCompany::get();
-		$status = 2;
+		$status = 1;
 		// $corp = Corporation::get();
 		$corp = VCorp::get();
 		// $corp = 0;
@@ -433,4 +434,13 @@ class CorporationController extends Controller
 
 	}
 
+	public function show_offer_detail($id){
+		  $rec_info_re = AllRecInfo::findOrFail($id); 
+		// dd($rec_info_re);
+
+		return view('/offer_comp/management_screen/offer_comp_management_view/job_offer_detail',
+			compact('id',
+							'rec_info_re'
+			));
+	}
 }
