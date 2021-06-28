@@ -14,11 +14,11 @@ class CreateTestusersTable extends Migration
     public function up()
     {
         Schema::create('testusers', function (Blueprint $table) {
- 					 $table->increments('id');
- 					 $table->string('username')->comment('名前');
- 					 $table->string('mail')->comment('メール');
- 					 $table->integer('age')->comment('年齢');
- 					 $table->timestamps();
+            $table->increments('id');
+            $table->string('username')->comment('名前');
+            $table->string('mail')->comment('メール');
+            $table->integer('age')->comment('年齢');
+            $table->timestamps();
         });
     }
 

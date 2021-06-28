@@ -1,6 +1,6 @@
 $(function(){
-	$('#offer_button').click(function(){
-		 //body内の最後に<div id="modal-bg"></div>を挿入
+  $('#offer_button').click(function(){
+     //body内の最後に<div id="modal-bg"></div>を挿入
      $("body").append('<div id="modal-bg"></div>');
     //画面中央を計算する関数を実行
     modalResize();
@@ -30,7 +30,7 @@ $(function(){
             $("#modal-main").css({
                 "left": ((w - cw)/2) + "px",
                 "top": ((h - ch)/2) + "px"
-						});
+            });
      }
    });
-	})
+  })

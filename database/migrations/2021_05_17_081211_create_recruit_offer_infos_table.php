@@ -15,9 +15,9 @@ class CreateRecruitOfferInfosTable extends Migration
     {
         Schema::create('recruit_offer_infos', function (Blueprint $table) {
             $table->id();
-						$table->integer('corporations_id');
-						$table->integer('recruit_company_id');
-						$table->string('recruit_ocupation');   //企業ID
+            $table->integer('corporations_id');
+            $table->integer('recruit_company_id');
+            $table->string('recruit_ocupation');   //企業ID
             $table->integer('open_status');  //公開情報 
             $table->string('job_title');   //求人タイトル
             $table->string('job_feature');   //特徴・訴求ポイント
@@ -38,7 +38,7 @@ class CreateRecruitOfferInfosTable extends Migration
             $table->integer('foregin_nationality');   //
             $table->integer('english_level');   //
             $table->integer('chinese_level');   //
-						$table->date('recruit_period')->nullable();    //募集期間
+            $table->date('recruit_period')->nullable();    //募集期間
             $table->integer('occupation_category_1');   //
             $table->integer('occupation_category_2');   //
             $table->integer('recruiting_plan_count');   //
@@ -92,12 +92,12 @@ class CreateRecruitOfferInfosTable extends Migration
             $table->string('welfare');   //
             $table->integer('counterplan_secound_hand_smok');   //
             $table->string('counterplan_secound_hand_smok_detail')->nullable();   //
-						$table->integer('created_by')->nullable();
-						$table->timestamp('created_at')->nullable();
-						$table->integer('updated_by')->nullable();
-						$table->timestamp('updated_at')->nullable();
-						$table->integer('deleted_by')->nullable();
-						$table->timestamp('deleted_at')->nullable();
+            $table->integer('created_by')->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->integer('updated_by')->nullable();
+            $table->timestamp('updated_at')->nullable();
+            $table->integer('deleted_by')->nullable();
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 

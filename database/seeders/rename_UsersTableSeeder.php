@@ -15,6 +15,6 @@ class UsersTableSeeder extends Seeder
           'name' => '山田太朗',
           'email' => 'taro@example.com',
           'password' => bcrypt('YOUR-PASSWORD')
-			]);
+      ]);
     }
 }

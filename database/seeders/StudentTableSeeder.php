@@ -12,15 +12,15 @@ class StudentTableSeeder extends Seeder
     public function run()
     {
         // $this->call(UserSeeder::class);
-    	DB::table('students')->delete();
-			$faker = Faker¥Factory::create('ja_JP');
+      DB::table('students')->delete();
+      $faker = Faker¥Factory::create('ja_JP');
 
-			for ($i = 0;$i < 10 ; $i++) {
-					¥App¥Student::create([
-						'name' => $faker->name(),
-						'email' => $faker->email(),
-						'tel' => $faker->phoneNumber()	
-					]);
-			}
-		}
+      for ($i = 0;$i < 10 ; $i++) {
+          ¥App¥Student::create([
+            'name' => $faker->name(),
+            'email' => $faker->email(),
+            'tel' => $faker->phoneNumber()  
+          ]);
+      }
+    }
 }

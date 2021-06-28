@@ -66,18 +66,18 @@
             <div class="col-md-8 col-12">
               <div class="card">
                 <div class="card-header">
-									<h3 class='card_title' style="display: inline;" >募集企業</h3>
-									<a href='#' id="open_corp_modal" style="float: right; display: inline;" data-toggle="modal" data-target="#Modal_comp_edit">
-										<img src="{{asset('storage/img/icon.png')}}" width="20" height="20" >
-									</a>
+                  <h3 class='card_title' style="display: inline;" >募集企業</h3>
+                  <a href='#' id="open_corp_modal" style="float: right; display: inline;" data-toggle="modal" data-target="#Modal_comp_edit">
+                    <img src="{{asset('storage/img/icon.png')}}" width="20" height="20" >
+                  </a>
                 </div>
                 <div class="card-body">
                   <div class="masonry-item">
-										@if ($status === 1)
-											<form action="/posts" method="post" enctype="multipart/form-data">
-										@elseif ($status  === 2)
-											<form action="{{url('/update',$rec_info_re->id)}}" method="post" enctype="multipart/form-data">
-										@endif
+                    @if ($status === 1)
+                      <form action="/posts" method="post" enctype="multipart/form-data">
+                    @elseif ($status  === 2)
+                      <form action="{{url('/update',$rec_info_re->id)}}" method="post" enctype="multipart/form-data">
+                    @endif
                       {{ csrf_field() }}
                       <div class="form-group row"><label for="company_name" class="col-sm-3 col-form-label">会社名&nbsp;<span class="text-danger required">*</span></label>
                         <div class="col-sm-9">
@@ -149,13 +149,13 @@
                           <input type="file hidden" name="company_logo" id="image_h">
                         </div>
                       </div>
-											<div class="form-group row" id="input_pluralBox"><label class="col-sm-3 col-form-label"></label>
-												<div class="col-sm-9" id="input_comp">
-													<select id="corp_link" style="display: inline;" class="col-sm-4 form-control" name='selectbox_a'>
-													</select>
-													<button type="button" style="display: inline;" class="col-sm-4 btn btn-primary" data-toggle="modal" data-target="#Modal_comp_create">新規作成する</button>
-												</div>
-											</div>
+                      <div class="form-group row" id="input_pluralBox"><label class="col-sm-3 col-form-label"></label>
+                        <div class="col-sm-9" id="input_comp">
+                          <select id="corp_link" style="display: inline;" class="col-sm-4 form-control" name='selectbox_a'>
+                          </select>
+                          <button type="button" style="display: inline;" class="col-sm-4 btn btn-primary" data-toggle="modal" data-target="#Modal_comp_create">新規作成する</button>
+                        </div>
+                      </div>
                   </div>
                 </div>
               </div>
@@ -235,9 +235,9 @@
                       </div>
                       <div class="form-group row"><label class="col-sm-3 col-form-label">特徴・訴求ポイント</label>
                         <div class="col-sm-9 input_item" name="feature_offer_point" class="form-control" id="feature_offer_point">
-													@foreach ($charmpoints as $charmpoint => $values)
-														<label style="padding: .18rem .18rem;"><input id="feature_{{$charmpoint}}" type="checkbox" name="feature_offer_point[]" value={{$charmpoint}} onclick="click_cb();">&nbsp;{{$values}}</label>
-													@endforeach
+                          @foreach ($charmpoints as $charmpoint => $values)
+                            <label style="padding: .18rem .18rem;"><input id="feature_{{$charmpoint}}" type="checkbox" name="feature_offer_point[]" value={{$charmpoint}} onclick="click_cb();">&nbsp;{{$values}}</label>
+                          @endforeach
                         </div>
                       </div>
                       <div class="form-group row"><label for="main_image" class="col-sm-3 col-form-label">画像（メイン）&nbsp;<span class="text-danger required">*</span></label>
@@ -973,17 +973,17 @@
           </div>
           <div class="masonry-item col-md-2 d-none d-lg-block d-xl-block d-md-block col-12">&nbsp;</div>
 
-					<div class="row update_page">
+          <div class="row update_page">
             <div class="masonry-item col-md-2 d-none d-lg-block d-xl-block d-md-block col-12">&nbsp;</div>
             <div class="col-md-8 col-12">
-							<div class="alert alert-danger" role="alert">
-								<h2>エージェント限定情報を編集は運営までご連絡下さい</h2>
-								<a href="#">運営へのお問い合わせはこちらへ</a>
-							</div>
-						</div>
-					</div>
-						
-					<div class="row update_page">
+              <div class="alert alert-danger" role="alert">
+                <h2>エージェント限定情報を編集は運営までご連絡下さい</h2>
+                <a href="#">運営へのお問い合わせはこちらへ</a>
+              </div>
+            </div>
+          </div>
+            
+          <div class="row update_page">
             <div class="masonry-item col-md-2 d-none d-lg-block d-xl-block d-md-block col-12">&nbsp;</div>
             <div class="col-md-8 col-12">
               <div class="card">
@@ -999,27 +999,27 @@
                       </div>
                       <div class="form-group row chois_ratio" ><label for="ratio" class="col-sm-3 col-form-label">割合（％）&nbsp;<span class="text-danger required">*</span></label>
                         <div class="col-sm-9">
-													<label name="ratio" class="form-control" id="edit_ratio"></label>
+                          <label name="ratio" class="form-control" id="edit_ratio"></label>
                         </div>
                       </div>
                       <div class="form-group row chois_ratio" ><label for="terms_at_rate" class="col-sm-3 col-form-label">理論年収の定義&nbsp;<span class="text-danger required">*</span></label>
                         <div class="col-sm-9">
-													<textarea name="terms_at_rate" class="form-control" id="edit_terms_at_rate" readonly rows="8"></textarea>
+                          <textarea name="terms_at_rate" class="form-control" id="edit_terms_at_rate" readonly rows="8"></textarea>
                         </div>
                       </div>
                       <div class="form-group row not_chois_ratio" ><label for="fixed_reward_amount" class="col-sm-3 col-form-label">固定報酬額&nbsp;<span class="text-danger required">*</span></label>
                         <div class="col-sm-9">
-													<label name="fixed_reward_amount" class="form-control" id="edit_fixed_reward_amount"></label>
+                          <label name="fixed_reward_amount" class="form-control" id="edit_fixed_reward_amount"></label>
                         </div>
                       </div>
                       <div class="form-group row"><label for="refund_provision" class="col-sm-3 col-form-label">返金規定&nbsp;<span class="text-danger required">*</span></label>
                         <div class="col-sm-9"> 
-													<textarea name="refund_provision" class="form-control" id="edit_refund_provision" readonly rows="8"></textarea>
+                          <textarea name="refund_provision" class="form-control" id="edit_refund_provision" readonly rows="8"></textarea>
                         </div>
                       </div>
                       <div class="form-group row"><label for="memo" class="col-sm-3 col-form-label"></label>
                         <div class="col-sm-9">
-													<textarea name="memo" class="form-control" id="edit_memo" readonly rows="8"></textarea>
+                          <textarea name="memo" class="form-control" id="edit_memo" readonly rows="8"></textarea>
                         </div>
                       </div>
                   </div>
@@ -1119,9 +1119,9 @@
           </div>
 </form>
 <!-- 新規求人登録 -->
-							<form action="/corp_cre" method="post" enctype="multipart/form-data">
-								{{ csrf_field() }}
-								<div class="modal fade" id="Modal_comp_create" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+              <form action="/corp_cre" method="post" enctype="multipart/form-data">
+                {{ csrf_field() }}
+                <div class="modal fade" id="Modal_comp_create" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
                   <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -1130,23 +1130,23 @@
                       </div>
                       <div class="modal-body">
                     <div class="form-group row"><label for="company_name" class="col-sm-3 col-form-label">会社名&nbsp;<span class="text-danger required">*</span></label>
-												<div class="col-sm-9">
-													<input type="text" name="company_name" class="form-control" id="company_name" value="{{ old('company_name') }}" placeholder="">
-												</div>
+                        <div class="col-sm-9">
+                          <input type="text" name="company_name" class="form-control" id="company_name" value="{{ old('company_name') }}" placeholder="">
+                        </div>
                       </div>
                       <div class="form-group row"><label for="comp_add01" class="col-sm-3 col-form-label">会社住所&nbsp;<span class="text-danger required">*</span></br>都道府県</label>
                         <div class="col-sm-9">
                           <select name="comp_add01" class="form-control" id="comp_add01_list" >
-														<option hidden>--都道府県▼--</option>
-														@foreach ($prefectures as $prefecture => $values)
-															<option value={{$prefecture}}>{{$values}}</option>
-														@endforeach
+                            <option hidden>--都道府県▼--</option>
+                            @foreach ($prefectures as $prefecture => $values)
+                              <option value={{$prefecture}}>{{$values}}</option>
+                            @endforeach
                           </select>
                         </div>
                       </div>
                       <div class="form-group row"><label for="comp_add02" class="col-sm-3 col-form-label">会社住所&nbsp;<span class="text-danger required">*</span></br>市区町村・番地・建物名</label>
                         <div class="col-sm-9">
-													<input type="text" name="comp_add02" class="form-control" id="comp_add02" value="{{ old('comp_add02') }}" placeholder="〇〇市〇〇　１−２−３　〇〇ビル">
+                          <input type="text" name="comp_add02" class="form-control" id="comp_add02" value="{{ old('comp_add02') }}" placeholder="〇〇市〇〇　１−２−３　〇〇ビル">
                         </div>
                       </div>
                       <div class="form-group row"><label for="company_hp" class="col-sm-3 col-form-label">会社HP&nbsp;<span class="text-danger required">*</span></label>
@@ -1170,28 +1170,28 @@
                       </div>
                       <div class="form-group row"><label for="employee_number" class="col-sm-3 col-form-label">従業員数&nbsp;<span class="text-danger required">*</span></label>
                         <div class="col-sm-9">
-													<input type="number" name="employee_number" class="form-control" id="employee_number" value="{{ old('employee_number') }}" placeholder="数値で記載">
+                          <input type="number" name="employee_number" class="form-control" id="employee_number" value="{{ old('employee_number') }}" placeholder="数値で記載">
                         </div>
                       </div>
                       <div class="form-group row"><label for="foundation_date"
                          class="col-sm-3 col-form-label">設立年月&nbsp;<span class="text-danger required">*</span></label>
                         <div class="col-sm-9">
-													<input type="month" name="foundation_date" class="form-control" id="foundation_date" value="{{ old('foundation_date') }}" placeholder="">
+                          <input type="month" name="foundation_date" class="form-control" id="foundation_date" value="{{ old('foundation_date') }}" placeholder="">
                         </div>
                       </div>
                       <div class="form-group row"><label for="company_overview" class="col-sm-3 col-form-label">会社概要</label>
                         <div class="col-sm-9">
-													<textarea class="form-control" name="company_overview" id="company_overview" rows="6">{{ old('company_overview') }}</textarea>
+                          <textarea class="form-control" name="company_overview" id="company_overview" rows="6">{{ old('company_overview') }}</textarea>
                         </div>
                       </div>
                       <div class="form-group row"><label for="business_guidance" class="col-sm-3 col-form-label">事業内容</label>
                         <div class="col-sm-9"> 
-													<textarea class="form-control" name="business_guidance" id="business_guidance" rows="6">{{ old('business_guidance') }}</textarea>
+                          <textarea class="form-control" name="business_guidance" id="business_guidance" rows="6">{{ old('business_guidance') }}</textarea>
                         </div>
                       </div>
                       <div class="form-group row"><label for="company_logo" class="col-sm-3 col-form-label">企業ロゴ</label>
                         <div class="col-sm-9">
-													<input type="file" name="company_logo" accept="image/png, image/jpg" id="company_logo" value="{{ old('company_logo') }}" >
+                          <input type="file" name="company_logo" accept="image/png, image/jpg" id="company_logo" value="{{ old('company_logo') }}" >
                         </div>
                       </div>
                       <div class="modal-footer">
@@ -1204,11 +1204,11 @@
             </div>
           </div>
           <div class="masonry-item col-md-2 d-none d-lg-block d-xl-block d-md-block col-12">&nbsp;</div>
-				</form>
+        </form>
 
 <!-- 募集企業更新 -->
-							<form action="/corp_edit" method="post" enctype="multipart/form-data">
-								{{ csrf_field() }}
+              <form action="/corp_edit" method="post" enctype="multipart/form-data">
+                {{ csrf_field() }}
                 <div class="modal fade" id="Modal_comp_edit" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
                   <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
@@ -1218,24 +1218,24 @@
                       </div>
                       <div class="modal-body">
                     <div class="form-group row"><label for="company_name" class="col-sm-3 col-form-label">会社名&nbsp;<span class="text-danger required">*</span></label>
-												<div class="col-sm-9">
-													<input type="text" name="company_name" class="form-control" id="company_name_edit" placeholder="">
+                        <div class="col-sm-9">
+                          <input type="text" name="company_name" class="form-control" id="company_name_edit" placeholder="">
                           <input type="hidden" name="company_id" id="company_id_h">
-												</div>
+                        </div>
                       </div>
                       <div class="form-group row"><label for="comp_add01" class="col-sm-3 col-form-label">会社住所&nbsp;<span class="text-danger required">*</span></br>都道府県</label>
                         <div class="col-sm-9">
                           <select name="comp_add01" class="form-control" id="comp_add01_edit" >
-														<option hidden>--都道府県▼--</option>
-														@foreach ($prefectures as $prefecture => $values)
-															<option value={{$prefecture}}>{{$values}}</option>
-														@endforeach
+                            <option hidden>--都道府県▼--</option>
+                            @foreach ($prefectures as $prefecture => $values)
+                              <option value={{$prefecture}}>{{$values}}</option>
+                            @endforeach
                           </select>
                         </div>
                       </div>
                       <div class="form-group row"><label for="comp_add02" class="col-sm-3 col-form-label">会社住所&nbsp;<span class="text-danger required">*</span></br>市区町村・番地・建物名</label>
                         <div class="col-sm-9">
-													<input type="text" name="comp_add02" class="form-control" id="comp_add02_edit" placeholder="〇〇市〇〇　１−２−３　〇〇ビル">
+                          <input type="text" name="comp_add02" class="form-control" id="comp_add02_edit" placeholder="〇〇市〇〇　１−２−３　〇〇ビル">
                         </div>
                       </div>
                       <div class="form-group row"><label for="company_hp" class="col-sm-3 col-form-label">会社HP&nbsp;<span class="text-danger required">*</span></label>
@@ -1259,28 +1259,28 @@
                       </div>
                       <div class="form-group row"><label for="employee_number" class="col-sm-3 col-form-label">従業員数&nbsp;<span class="text-danger required">*</span></label>
                         <div class="col-sm-9">
-													<input type="number" name="employee_number" class="form-control" id="employee_number_edit" placeholder="数値で記載">
+                          <input type="number" name="employee_number" class="form-control" id="employee_number_edit" placeholder="数値で記載">
                         </div>
                       </div>
                       <div class="form-group row"><label for="foundation_date"
                          class="col-sm-3 col-form-label">設立年月&nbsp;<span class="text-danger required">*</span></label>
                         <div class="col-sm-9">
-													<input type="month" name="foundation_date" class="form-control" id="foundation_date_edit" placeholder="">
+                          <input type="month" name="foundation_date" class="form-control" id="foundation_date_edit" placeholder="">
                         </div>
                       </div>
                       <div class="form-group row"><label for="company_overview" class="col-sm-3 col-form-label">会社概要</label>
                         <div class="col-sm-9">
-													<textarea class="form-control" name="company_overview" id="company_overview_edit" rows="6"></textarea>
+                          <textarea class="form-control" name="company_overview" id="company_overview_edit" rows="6"></textarea>
                         </div>
                       </div>
                       <div class="form-group row"><label for="business_guidance" class="col-sm-3 col-form-label">事業内容</label>
                         <div class="col-sm-9"> 
-													<textarea class="form-control" name="business_guidance" id="business_guidance_edit" rows="6"></textarea>
+                          <textarea class="form-control" name="business_guidance" id="business_guidance_edit" rows="6"></textarea>
                         </div>
                       </div>
                       <div class="form-group row"><label for="company_logo" class="col-sm-3 col-form-label">企業ロゴ</label>
                         <div class="col-sm-9">
-													<input type="file" name="company_logo" accept="image/png, image/jpg" id="company_logo_edit">
+                          <input type="file" name="company_logo" accept="image/png, image/jpg" id="company_logo_edit">
                         </div>
                       </div>
                       <div class="modal-footer">
@@ -1293,7 +1293,7 @@
             </div>
           </div>
           <div class="masonry-item col-md-2 d-none d-lg-block d-xl-block d-md-block col-12">&nbsp;</div>
-				</form>
+        </form>
 
   
           <!-- 勤務地の詳細情報入力モーダル -->
@@ -1328,15 +1328,15 @@
 
                         <div class="form-group row"><label for="closest_station_route" class="col-sm-3 col-form-label">最寄駅の路線&nbsp;<span class="text-danger required">*</span></label>
                           <div class="col-sm-9" id="list_closest_station_route_app">
-														<select name="list_closest_station_route" class="form-control" id="list_closest_station_route"></select>
-														<button type="button" id="train_search" class="btn btn-primary">検索</button>
+                            <select name="list_closest_station_route" class="form-control" id="list_closest_station_route"></select>
+                            <button type="button" id="train_search" class="btn btn-primary">検索</button>
                           </div>
                         </div>
 
                         <div class="form-group row"><label for="closest_station" class="col-sm-3 col-form-label">最寄駅&nbsp;<span class="text-danger required">*</span></label>
                           <div class="col-sm-9">
-														<select name="list_closest_station" class="form-control" id="list_closest_station"></select>
-														<button type="button" id="station_search" class="btn btn-primary">検索</button>
+                            <select name="list_closest_station" class="form-control" id="list_closest_station"></select>
+                            <button type="button" id="station_search" class="btn btn-primary">検索</button>
                           </div>
                         </div>
                         <div class="form-group row"><label for="range_up_to_closest_station" class="col-sm-3 col-form-label">最寄駅までの距離</label>
@@ -1381,8 +1381,8 @@
 <script>
 
 $(function(){
-	//企業情報の入力(編集不可)
-	if (@json($rec_info_re) === 0) {
+  //企業情報の入力(編集不可)
+  if (@json($rec_info_re) === 0) {
     document.getElementById('company_name').innerHTML = @json($corp[0]['corp_name']);
     $('#company_name_h').val(@json($corp[0]['corp_name']));
     document.getElementById('comp_add02').innerHTML = @json($corp[0]['address']);
@@ -1398,7 +1398,7 @@ $(function(){
     document.getElementById('business_guidance').innerHTML = @json($corp[0]['business_content']);
     $('#business_guidance_h').val(@json($corp[0]['business_content']));
     //都道府県
-		document.getElementById('comp_add01').innerHTML = @json($prefectures[$corp[0]['prefecture']]);
+    document.getElementById('comp_add01').innerHTML = @json($prefectures[$corp[0]['prefecture']]);
     $('#comp_add01_h').val(@json($corp[0]['prefecture']));
     //業界1
     document.getElementById('job1c').innerHTML = @json($first[$corp[0]['industry1'] - 1]['name']);
@@ -1406,18 +1406,18 @@ $(function(){
     //業界2
     document.getElementById('job2c').innerHTML = @json($second[$corp[0]['industry2'] - 1]['name']);
     $('#job2c_h').val(@json($corp[0]['industry2']));
-		//ロゴ
+    //ロゴ
     document.getElementById('image').src = @json($corp[0]['logo']).replace('public','storage');
     $('#image_h').val(@json($corp[0]['logo']));
-	} else {
-		var temp = @json($rec_info_re);
-		var pref = @json($prefectures);
-		var first = @json($first);
-		var second = @json($second);
+  } else {
+    var temp = @json($rec_info_re);
+    var pref = @json($prefectures);
+    var first = @json($first);
+    var second = @json($second);
 
 console.log(@json($rec_info_re[0]));
 console.log(temp);
-		document.getElementById('company_name').innerHTML = temp['corp_name'];
+    document.getElementById('company_name').innerHTML = temp['corp_name'];
     $('#company_name_h').val(temp['corp_name']);
     document.getElementById('comp_add02').innerHTML = temp['address'];
     $('#comp_add02_h').val(temp['address']);
@@ -1432,106 +1432,106 @@ console.log(temp);
     document.getElementById('business_guidance').innerHTML = temp['business_content'];
     $('#business_guidance_h').val(temp['business_content']);
     //都道府県
-		document.getElementById('comp_add01').innerHTML = pref[temp['prefecture']];
+    document.getElementById('comp_add01').innerHTML = pref[temp['prefecture']];
     $('#comp_add01_h').val(temp['prefecture']);
     //業界1
-		document.getElementById('job1c').innerHTML = first[temp['industry1'] -1]['name'];
+    document.getElementById('job1c').innerHTML = first[temp['industry1'] -1]['name'];
     $('#job1c_h').val(temp['industry1']);
     //業界2
-		document.getElementById('job2c').innerHTML = second[temp['industry2'] -1]['name']; 
+    document.getElementById('job2c').innerHTML = second[temp['industry2'] -1]['name']; 
     $('#job2c_h').val(temp['industry2']);
-		//ロゴ
+    //ロゴ
     document.getElementById('image').src = temp['logo'].replace('public','storage');
     $('#image_h').val(temp['logo']);
 
-	}
-	//募集企業選択プルダウンリストの表示制御
-	$('#open_corp_modal').after().hide();
+  }
+  //募集企業選択プルダウンリストの表示制御
+  $('#open_corp_modal').after().hide();
   var recruit_company = @json($recruit_company);
   var prefectures = @json($prefectures);
   var first = @json($first);
   var second = @json($second);
-		$('#corp_link').append('<option hidden>募集企業選択</option>');	
+    $('#corp_link').append('<option hidden>募集企業選択</option>');  
   for ( var i = 0; i < recruit_company.length; i++ ){
     $('#corp_link').append('<option class="dropdown-item" id=' + recruit_company[i]['id'] + ' value=' + recruit_company[i]['id'] + '>' + recruit_company[i]['corporation_name']  + '</option>');  
-	}	
-	
-	//プルダウン選択後の制御
-	$('select#corp_link').change(function(){
-		var corp_id = $('#corp_link').val();
+  }  
+  
+  //プルダウン選択後の制御
+  $('select#corp_link').change(function(){
+    var corp_id = $('#corp_link').val();
 
-	if (corp_id >= 0) {
-		$('#open_corp_modal').show();
-	}
-	console.log("corp_id");
-	console.log(corp_id);
-	console.log(recruit_company[corp_id - 1]);
-	//会社名と募集企業idの表示とdb登録用の値取得
+  if (corp_id >= 0) {
+    $('#open_corp_modal').show();
+  }
+  console.log("corp_id");
+  console.log(corp_id);
+  console.log(recruit_company[corp_id - 1]);
+  //会社名と募集企業idの表示とdb登録用の値取得
     document.getElementById('company_name').innerHTML = recruit_company[corp_id-1 ]['corporation_name'] 
     document.getElementById('company_name_edit').value = recruit_company[corp_id-1 ]['corporation_name'] 
     $('#company_name_h').val(recruit_company[corp_id-1]['corporation_name']);
     $('#company_id_h').val(recruit_company[corp_id-1]['id']);
 
-	//住所の表示とdb登録用の値取得
+  //住所の表示とdb登録用の値取得
     document.getElementById('comp_add02').innerHTML = recruit_company[corp_id-1]['address']
     document.getElementById('comp_add02_edit').value = recruit_company[corp_id-1]['address']
     $('#comp_add02_h').val(recruit_company[corp_id-1]['address']);
 
-	//会社ホームページの表示とdb登録用の値取得 
+  //会社ホームページの表示とdb登録用の値取得 
     document.getElementById('company_hp').innerHTML = recruit_company[corp_id-1]['home_page']
     document.getElementById('company_hp_edit').value = recruit_company[corp_id-1]['home_page']
     $('#company_hp_h').val(recruit_company[corp_id-1]['home_page']);
 
-	//従業員数の表示とdb登録用の値取得 
+  //従業員数の表示とdb登録用の値取得 
     document.getElementById('employee_number').innerHTML = recruit_company[corp_id-1]['employee_number'] 
     document.getElementById('employee_number_edit').value = recruit_company[corp_id-1]['employee_number'] 
     $('#employee_number_h').val(recruit_company[corp_id-1]['employee_number']);
 
-	//設立年月の表示とdb登録用の値取得 
+  //設立年月の表示とdb登録用の値取得 
     document.getElementById('foundation_date').innerHTML = String(recruit_company[corp_id-1]['establish_year']) + '年' + String(recruit_company[corp_id-1]['establish_month']) + '月';
     document.getElementById('foundation_date_edit').value = (String(recruit_company[corp_id-1]['establish_year']) + '-' + String(recruit_company[corp_id-1]['establish_month']));
     $('#foundation_date_h').val(recruit_company[corp_id-1]['establish_year'] + '-' + recruit_company[corp_id-1]['establish_month']);
 
-	//会社概要の表示とdb登録用の値取得 
+  //会社概要の表示とdb登録用の値取得 
     document.getElementById('company_overview').innerHTML = recruit_company[corp_id-1]['company_profile']
     document.getElementById('company_overview_edit').value = recruit_company[corp_id-1]['company_profile']
     $('#company_overview_h').val(recruit_company[corp_id-1]['company_profile']);
 
-	//事業内容の表示とdb登録用の値取得 
+  //事業内容の表示とdb登録用の値取得 
     document.getElementById('business_guidance').innerHTML = recruit_company[corp_id-1]['business_content']
     document.getElementById('business_guidance_edit').value = recruit_company[corp_id-1]['business_content']
     $('#business_guidance_h').val(recruit_company[corp_id-1]['business_content']);
-		
-	//都道府県
-		document.getElementById('comp_add01').innerHTML = prefectures[recruit_company[corp_id-1]['prefecture']]
-		$('#comp_add01_edit').val(recruit_company[corp_id-1]['prefecture']);
+    
+  //都道府県
+    document.getElementById('comp_add01').innerHTML = prefectures[recruit_company[corp_id-1]['prefecture']]
+    $('#comp_add01_edit').val(recruit_company[corp_id-1]['prefecture']);
     $('#comp_add01_h').val(recruit_company[corp_id-1]['prefecture']);
 
-	//業界1
+  //業界1
     document.getElementById('job1c').innerHTML = first[recruit_company[corp_id-1]['industry1'] - 1]['name']
-		$('#job1c_edit').val(recruit_company[corp_id-1]['industry1']);
+    $('#job1c_edit').val(recruit_company[corp_id-1]['industry1']);
     $('#job1c_h').val(recruit_company[corp_id-1]['industry1']);
 
-	//業界2
+  //業界2
     document.getElementById('job2c').innerHTML = second[recruit_company[corp_id-1]['industry2'] - 1]['name']
-		$('#job2c_edit').val(recruit_company[corp_id-1]['industry2']);
+    $('#job2c_edit').val(recruit_company[corp_id-1]['industry2']);
     $('#job2c_h').val(recruit_company[corp_id-1]['industry2']);
 
-	//ロゴ
+  //ロゴ
     document.getElementById('image').src = recruit_company[corp_id-1]['corporation_logo'].replace('public','storage');
     $('#image_h').val(recruit_company[corp_id-1]['corporation_logo']);
-	})
+  })
 
-	//dbに値を登録してある項目の制御
-	//業界１
+  //dbに値を登録してある項目の制御
+  //業界１
   $('.job1c_group').html("");
   var first_indust_array = @json($first);
-	$('.job1c_group').append('<option hidden class=\"not_select\">選択してください</option>');
+  $('.job1c_group').append('<option hidden class=\"not_select\">選択してください</option>');
   for ( var i = 0; i < first_indust_array.length; i++ ){
     $('.job1c_group').append('<option  value=' + first_indust_array[i]['id'] + '>' + first_indust_array[i]['name']+ '</option>');
   }
 
-	//業界２(新規作成/募集企業登録)
+  //業界２(新規作成/募集企業登録)
   var first_indust_array = @json($first);
   $('#job1c_list').change(function() {
     var num = $('#job1c_list').val();
@@ -1545,9 +1545,9 @@ console.log(temp);
     }
     });
 
-	//業界２(新規作成/募集企業選択からの編集/first)
+  //業界２(新規作成/募集企業選択からの編集/first)
   var first_indust_array = @json($first);
-	$('select#corp_link').change(function(){
+  $('select#corp_link').change(function(){
     var num = $('#job1c_edit').val();
     $('#job2c_edit').html("");
     var second_indust_array = @json($second);
@@ -1556,8 +1556,8 @@ console.log(temp);
         $('#job2c_edit').append('<option  value=' + second_indust_array[i]['id'] + ' data-val=' + second_indust_array[i]['first_industry_id'] + '>' + second_indust_array[i]['name']+ '</option>');
       }
     }
-	})
-	//業界２(新規作成/募集企業選択からの編集/after_second)
+  })
+  //業界２(新規作成/募集企業選択からの編集/after_second)
   $('#job1c_edit').change(function() {
     var num = $('#job1c_edit').val();
     $('#job2c_edit').html("");
@@ -1568,9 +1568,9 @@ console.log(temp);
         $('#job2c_edit').append('<option  value=' + second_indust_array[i]['id'] + ' data-val=' + second_indust_array[i]['first_industry_id'] + '>' + second_indust_array[i]['name']+ '</option>');
       }
     }
-	});
+  });
 
-	//業種１
+  //業種１
   $('#job_category1').html("");
   var first_category_array = @json($first_category);
     $('#job_category1').append('<option hidden class=\"not_select\">選択してください</option>');
@@ -1578,11 +1578,11 @@ console.log(temp);
     $('#job_category1').append('<option  value=' + first_category_array[i]['id'] + '>' + first_category_array[i]['name']+ '</option>');
   }
 
-	if (@json($rec_info_re) != 0){
+  if (@json($rec_info_re) != 0){
     $('#job_category1').val(@json($rec_info_re['occupation_category_1']));
-	}
+  }
 
-	//業種２
+  //業種２
   var first_category_array = @json($first_category);
   $('#job_category1').change(function() {
     var num = $('#job_category1').val();
@@ -1594,9 +1594,9 @@ console.log(temp);
         $('#job_category2').append('<option  value=' + second_category_array[i]['id'] + ' data-val=' + second_category_array[i]['first_job_category_id'] + '>' + second_category_array[i]['name']+ '</option>');
       }
     }
-	});
+  });
 
-	if (@json($rec_info_re) != 0){
+  if (@json($rec_info_re) != 0){
     var num = $('#job_category1').val();
     $('#job_category2').html("");
     var second_category_array = @json($second_category);
@@ -1605,10 +1605,10 @@ console.log(temp);
         $('#job_category2').append('<option  value=' + second_category_array[i]['id'] + ' data-val=' + second_category_array[i]['first_job_category_id'] + '>' + second_category_array[i]['name']+ '</option>');
       }
     }
-	//業界2
+  //業界2
     $('#job_category2').val(@json($rec_info_re['occupation_category_2']));
 
-	}
+  }
 
 
 //checkbox/radio系の処理
@@ -1616,7 +1616,7 @@ console.log(temp);
   //訴求ポイントのチェックをつける
     const feature_str = @json($rec_info_re['job_feature']);
     var feature_array =feature_str.split(',');
-		console.log(feature_array);
+    console.log(feature_array);
     for ( var i = 0; i < feature_array.length; i++ ){
       $('input[id="feature_' + feature_array[i] + '"' + ']').prop("checked",true);
     }
@@ -1646,57 +1646,57 @@ console.log(temp);
   }
 
 // 最寄駅の路線検索
-	$('#train_search').click(function(){
-		$('#list_closest_station_route').html("");
-		var element = $('#pref01').val();
-		var trainUrl = 'http://express.heartrails.com/api/json?method=getLines&prefecture=' + element
-		$.ajax({
-		url: trainUrl,
-		type:'GET',
-		dataType: 'json', 
-		timeout:5000,
-		success: function(data, dataType) {
-				data.response.line.forEach(function( value ) {
-					$('#list_closest_station_route').append('<option>' + value +'</option>');
-				});
-			},
-		error: function(XMLHttpRequest, textStatus, errorThrown) {
-				alert("路線情報が取得できませんでした。");
-				console.log("路線情報が取得できませんでした。", XMLHttpRequest, textStatus, errorThrown);
-			}
-		});
-	})
+  $('#train_search').click(function(){
+    $('#list_closest_station_route').html("");
+    var element = $('#pref01').val();
+    var trainUrl = 'http://express.heartrails.com/api/json?method=getLines&prefecture=' + element
+    $.ajax({
+    url: trainUrl,
+    type:'GET',
+    dataType: 'json', 
+    timeout:5000,
+    success: function(data, dataType) {
+        data.response.line.forEach(function( value ) {
+          $('#list_closest_station_route').append('<option>' + value +'</option>');
+        });
+      },
+    error: function(XMLHttpRequest, textStatus, errorThrown) {
+        alert("路線情報が取得できませんでした。");
+        console.log("路線情報が取得できませんでした。", XMLHttpRequest, textStatus, errorThrown);
+      }
+    });
+  })
 
 // 最寄駅の検索
-	$('#station_search').click(function(){
-		$('#list_closest_station').html("");
-		var element = $('#list_closest_station_route').val();
-		var trainUrl = 'http://express.heartrails.com/api/json?method=getStations&line=' + element
-		var i = 0
-		$.ajax({
-		url: trainUrl,
-		type:'GET',
-		dataType: 'json', 
-		timeout:1000,
-		success: function(data, dataType) {
-				data.response.station.forEach(function( value ) {
-					$('#list_closest_station').append('<option>' + value.name +'</option>');
-				});
-			},
-		error: function(XMLHttpRequest, textStatus, errorThrown) {
-				alert("最寄駅情報が取得できませんでした。");
-				console.log("最寄駅情報が取得できませんでした。", XMLHttpRequest, textStatus, errorThrown);
-			}
-		});
-	})
+  $('#station_search').click(function(){
+    $('#list_closest_station').html("");
+    var element = $('#list_closest_station_route').val();
+    var trainUrl = 'http://express.heartrails.com/api/json?method=getStations&line=' + element
+    var i = 0
+    $.ajax({
+    url: trainUrl,
+    type:'GET',
+    dataType: 'json', 
+    timeout:1000,
+    success: function(data, dataType) {
+        data.response.station.forEach(function( value ) {
+          $('#list_closest_station').append('<option>' + value.name +'</option>');
+        });
+      },
+    error: function(XMLHttpRequest, textStatus, errorThrown) {
+        alert("最寄駅情報が取得できませんでした。");
+        console.log("最寄駅情報が取得できませんでした。", XMLHttpRequest, textStatus, errorThrown);
+      }
+    });
+  })
 
 
 // 勤務地情報の追加
-		var counter = 0;
-	$('#modal_reg').click(function(){
-		counter++;
-		var loc_title = '勤務地詳細' + counter;
-		$('#input_plural').after('<div id="work-location-1" class="col-sm-11 text" style="padding: 10;">\
+    var counter = 0;
+  $('#modal_reg').click(function(){
+    counter++;
+    var loc_title = '勤務地詳細' + counter;
+    $('#input_plural').after('<div id="work-location-1" class="col-sm-11 text" style="padding: 10;">\
       <div class="card-header" id="locate00"></div>\
       <div class="card-body">\
         <div class="row" style="padding: 10;">\
@@ -1729,8 +1729,8 @@ console.log(temp);
         </div>\
       </div>\
     </div>');
-		//画面に表示用
-		document.getElementById('locate01').innerHTML = document.getElementById('zip01').value
+    //画面に表示用
+    document.getElementById('locate01').innerHTML = document.getElementById('zip01').value
     document.getElementById('locate02').innerHTML = document.getElementById('pref01').value
     document.getElementById('locate03').innerHTML = document.getElementById('addr01').value
     document.getElementById('locate04').innerHTML = document.getElementById('list_closest_station_route').value
@@ -1738,30 +1738,30 @@ console.log(temp);
     document.getElementById('locate06').innerHTML = document.getElementById('range_up_to_closest_station').value
     document.getElementById('locate07').innerHTML = document.getElementById('working_place_detail').value
     document.getElementById('locate00').innerHTML = loc_title; 
-		//DBに保存する用
-			$('#input_pluralBox').append('<input type="hidden" name="loc01[]" id=loc01' + counter + '>');
-			$('#input_pluralBox').append('<input type="hidden" name="loc02[]" id=loc02' + counter + '>'); 
-			$('#input_pluralBox').append('<input type="hidden" name="loc03[]" id=loc03' + counter + '>'); 
-			$('#input_pluralBox').append('<input type="hidden" name="loc04[]" id=loc04' + counter + '>'); 
-			$('#input_pluralBox').append('<input type="hidden" name="loc05[]" id=loc05' + counter + '>'); 
-			$('#input_pluralBox').append('<input type="hidden" name="loc06[]" id=loc06' + counter + '>'); 
-			$('#input_pluralBox').append('<input type="hidden" name="loc07[]" id=loc07' + counter + '>'); 
-		//複数レコード格納するために配列に要素を入れる
-			$('#loc01' + counter).val($('#zip01').val());
-			$('#loc02' + counter).val($('#pref01').val());
-			$('#loc03' + counter).val($('#addr01').val());
-			$('#loc04' + counter).val($('#list_closest_station_route').val());
-			$('#loc05' + counter).val($('#list_closest_station').val());
-			$('#loc06' + counter).val($('#range_up_to_closest_station').val());
-			$('#loc07' + counter).val($('#working_place_detail').val());
+    //DBに保存する用
+      $('#input_pluralBox').append('<input type="hidden" name="loc01[]" id=loc01' + counter + '>');
+      $('#input_pluralBox').append('<input type="hidden" name="loc02[]" id=loc02' + counter + '>'); 
+      $('#input_pluralBox').append('<input type="hidden" name="loc03[]" id=loc03' + counter + '>'); 
+      $('#input_pluralBox').append('<input type="hidden" name="loc04[]" id=loc04' + counter + '>'); 
+      $('#input_pluralBox').append('<input type="hidden" name="loc05[]" id=loc05' + counter + '>'); 
+      $('#input_pluralBox').append('<input type="hidden" name="loc06[]" id=loc06' + counter + '>'); 
+      $('#input_pluralBox').append('<input type="hidden" name="loc07[]" id=loc07' + counter + '>'); 
+    //複数レコード格納するために配列に要素を入れる
+      $('#loc01' + counter).val($('#zip01').val());
+      $('#loc02' + counter).val($('#pref01').val());
+      $('#loc03' + counter).val($('#addr01').val());
+      $('#loc04' + counter).val($('#list_closest_station_route').val());
+      $('#loc05' + counter).val($('#list_closest_station').val());
+      $('#loc06' + counter).val($('#range_up_to_closest_station').val());
+      $('#loc07' + counter).val($('#working_place_detail').val());
     
   })
 
 // 勤務地情報の項目削除
   $('#work-location-delete').click(function(){
-		if (counter > 0) {
-			counter--;
-		}
+    if (counter > 0) {
+      counter--;
+    }
     $('#work-location-1').remove();
   })
 
@@ -1781,30 +1781,30 @@ console.log(temp);
     }
   });
 
-	if (@json($rec_info_re) != 0) {
-		alert('test');
-	} 
+  if (@json($rec_info_re) != 0) {
+    alert('test');
+  } 
 
-	//編集・新規作成に応じて表示非表示の切り替え
-	if(@json($status) == 1) {
-		console.log(@json($status));
+  //編集・新規作成に応じて表示非表示の切り替え
+  if(@json($status) == 1) {
+    console.log(@json($status));
       $('.create_page').show();
       $('.update_page').after().hide();
-	}else if(@json($status) == 2){
-		//編集時に表示する項目
-		$('.update_page').show();
-		//編集時に非表示にする項目
-		$('.create_page').after().hide();
-		//エージェント限定情報をラベル化した際の値
+  }else if(@json($status) == 2){
+    //編集時に表示する項目
+    $('.update_page').show();
+    //編集時に非表示にする項目
+    $('.create_page').after().hide();
+    //エージェント限定情報をラベル化した際の値
     document.getElementById('edit_ratio').innerHTML = @json($rec_info_re['Theoretical_annual']);
-		var flg_successful_reword = (@json($rec_info_re['calculation_method_performance_fee']) == 1 ) ? '割合(%)' : '固定報酬' ;
-		document.getElementById('edit_successful_reward_calculation_method').innerHTML = flg_successful_reword;
+    var flg_successful_reword = (@json($rec_info_re['calculation_method_performance_fee']) == 1 ) ? '割合(%)' : '固定報酬' ;
+    document.getElementById('edit_successful_reward_calculation_method').innerHTML = flg_successful_reword;
     document.getElementById('edit_terms_at_rate').innerHTML = @json($rec_info_re['Theoretical_annual_income']);
     document.getElementById('edit_fixed_reward_amount').innerHTML = @json($rec_info_re['fixed_reward']);
     document.getElementById('edit_refund_provision').innerHTML = @json($rec_info_re['refund_policy']);
     document.getElementById('edit_memo').innerHTML = @json($rec_info_re['warning_text']);
 
-	}
+  }
 
 
 
