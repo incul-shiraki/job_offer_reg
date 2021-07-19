@@ -17,5 +17,5 @@ class WorkPlace extends Model
                           'nearest_station',
                           'nearest_station_distance',
                           'work_location_detail'
-		];
+    ];
 }

@@ -78,18 +78,18 @@ class PageController extends Controller
 
         //求人申し込み企業
         Mail::send('emails.test', [], function($message){
-    	    $message
+          $message
             ->from('test@example.com', 'テスト')
             ->to('load1202ea6@gmail.com', 'Test')
             ->subject('This is a test mail');
-    	});
+      });
         //運営宛
         Mail::send('emails.test', [], function($message){
-    	    $message
+          $message
             ->from('test@example.com', 'テスト')
             ->to('load1202ea6@gmail.com', 'Test')
             ->subject('This is a test mail');
-    	});
+      });
         return redirect('/regist/end');
     }
 

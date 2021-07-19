@@ -22,31 +22,31 @@ class InsertDemoRequest extends FormRequest
      *
      * @return array
      */
-	public function rules()
-	{
-		return [
-			'username'=>'required',
-			'mail'=>'required|email',
-			'age'=>'required|numeric',
-		];
-	}
-	 
-	public function messages()
-	{
-		return [
-			"required" => "必須項目です。",
-			"email" => "メールアドレスの形式で入力してください。",
-			"numeric" => "数値で入力してください。",
-		];
-	}
+  public function rules()
+  {
+    return [
+      'username'=>'required',
+      'mail'=>'required|email',
+      'age'=>'required|numeric',
+    ];
+  }
+   
+  public function messages()
+  {
+    return [
+      "required" => "必須項目です。",
+      "email" => "メールアドレスの形式で入力してください。",
+      "numeric" => "数値で入力してください。",
+    ];
+  }
 
-	public function getData()
-	{
-		$user = new User;
-		$value = $user->find(1);
-		$arr = ['username','mail','age'];
-		return view('sample', compact('value','arr'));
-	}
+  public function getData()
+  {
+    $user = new User;
+    $value = $user->find(1);
+    $arr = ['username','mail','age'];
+    return view('sample', compact('value','arr'));
+  }
 
 
 }

@@ -11,7 +11,7 @@
         <div class="col-md-12 col-lg-12 col-xl-12 d-none d-md-block d-lg-block d-xl-block">&nbsp;</div>
         <button type="button" id="offer_button"class="btn cur-p btn-outline-dark" data-toggle="modal" data-target="#Modal_offer_open">公開申請</button>
         <div>
-          @include('/offer_comp/management_screen/offer_comp_management_view/public_application')
+          @include('/offer_comp/recruitment/public_application')
         </div>
       </div>
     </div>

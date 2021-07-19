@@ -139,9 +139,10 @@ var temp6 = `
 var temp7 = `
 `; 
 //勤務タイプのテンプレートをテキストエリアに表示
+$(function(){
  $('#template').change(function() {
    var num = $(this).val();
-  
+ console.log(num); 
   if(num == 1){
     $('#working_hours_type').val(temp1);
   }else if(num == 2){
@@ -158,6 +159,7 @@ var temp7 = `
     $('#working_hours_type').val(temp7);
   }
  });
+});
 
 //管理監督者の募集の可否に応じて登録画面の項目変更
 //労働時間制・固定残業代の表示非表示
@@ -296,8 +298,9 @@ function dis_time_set () {
 //福利厚生テキスト
 var welfare_benefits= ` 社内保険完備(雇用保険、労災、厚生年金、健康保険)
 `;
-
+$(function(){
     $('#welfare_benefits').val(welfare_benefits);
+})
 //エージェント情報の埋め込みテキスト
 var agent1 = ` ・「月額固定給×12ヶ月＋賞与算定基準額×前年度実績賞与支給月数」のことを指します。
 ・月額固定給は「基本給＋家族手当＋住宅手当＋役職手当＋その他諸手当」で算出。
@@ -314,14 +317,19 @@ var agent3 = `※紹介手数料又は返金規定の条件について、
 こちらの求人票において設定された条件にて合意が成立し、
 この求人票の条件が優先して適用されますのでご注意ください。
 `; 
+$(function(){
     $('#terms_at_rate').val(agent1);
     $('#refund_provision').val(agent2);
     $('#memo').val(agent3);
+})
 
 //成功報酬の算定方法の選択による項目の変更
 $(function(){
+    var successful_rewar = 1;
+      $('.chois_ratio').show();
+      $('.not_chois_ratio').after().hide();
   $('#successful_reward_calculation_method').change(function() {
-    var successful_rewar = $(this).val();
+    successful_rewar = $('#successful_reward_calculation_method').val();
     if (successful_rewar == 1 ) {
       $('.chois_ratio').show();
       $('.not_chois_ratio').after().hide();
@@ -331,6 +339,7 @@ $(function(){
     }
    });
 });
+
 
 //募集終了日の有無に応じてカレンダーの表示非表示を制御
 $(function(){                                                                
@@ -471,16 +480,6 @@ $(function(){
   } 
 });
 
-//報酬の支払い方法の制御
-$(function(){
-  if ($('#successful_reward_calculation_method').val() == 1) {
-    $('.chois_ratio').show();
-    $('.not_chois_ratio').after().hide();
-  }else if ($('#successful_reward_calculation_method').val() == 2) {
-    $('.not_chois_ratio').show();
-    $('.chois_ratio').after().hide();
-  } 
-});
 
 //ページロード時に非表示や入力不可の初期設定をする
 window.onload = function() {

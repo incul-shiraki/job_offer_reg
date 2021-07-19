@@ -27,12 +27,12 @@ class CheckStudentRequest extends FormRequest
           'name'=>'required',
           'email'=>'required|email'
         ];
-		}
+    }
     public function messages() 
     {
         return [
             "required" => "必須項目です。",
             "email" => "メールアドレスの形式で入力してください。"
         ];
-		}
+    }
 }

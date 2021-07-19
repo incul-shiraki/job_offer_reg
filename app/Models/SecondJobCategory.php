@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class SecondJobCategory extends Model
 {
-	protected $table = 'second_job_categories';
+  protected $table = 'second_job_categories';
     // use HasFactory;
 }
