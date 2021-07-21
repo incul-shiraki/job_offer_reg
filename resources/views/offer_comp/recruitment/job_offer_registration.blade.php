@@ -270,13 +270,6 @@ $(function(){
       $('input[id="feature_' + feature_array[i] + '"' + ']').prop("checked",true);
     }
 
-  //選考フローのチェックをつける
-    const flow_str = @json($rec_info_re['selection_flow']);
-    var flow_array =flow_str.split(',');
-    for ( var i = 0; i < flow_array.length; i++ ){
-      $('input[id="selection_flow_' + flow_array[i] + '"' + ']').prop("checked",true);
-    }
-
   //給与支払い方法のラジオを選択
     const payroll_str = @json($rec_info_re['salary_type']);
       $('input:radio[name="payroll_type"]').val([payroll_str]);

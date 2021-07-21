@@ -107,7 +107,7 @@ $(function() {
     $('#station_route_list').append('<div id="station_route_no_' + code + '"><label class="col-sm-2 col-form-label"></label>\
       <button type="button" onclick="delete_station_route(event)" id="close_station_route_' + code +'" class="close"><span id="' + code + '" aria-hidden="true">×</span></button>\
       <label id="station_route_' + code + '" class="col-sm-6 col-form-label">' + temp_location + '</label>\
-    </div>'); 
+      </div>'); 
   }
 // 最寄路線の削除
   window.delete_station_route = function delete_station_route(event){
@@ -193,21 +193,21 @@ $(function() {
     document.getElementById('locate06').innerHTML = $('#working_place_detail').val();
     document.getElementById('locate00' + counter).innerHTML = loc_title; 
     //DBに保存する用
-      $('#input_pluralBox').append('<input type="hidden" name="loc01[]" id=loc01' + counter + '>');
-      $('#input_pluralBox').append('<input type="hidden" name="loc02[]" id=loc02' + counter + '>'); 
-      $('#input_pluralBox').append('<input type="hidden" name="loc03[]" id=loc03' + counter + '>'); 
-      $('#input_pluralBox').append('<input type="hidden" name="loc04[]" id=loc04' + counter + '>'); 
-      $('#input_pluralBox').append('<input type="hidden" name="loc05[]" id=loc05' + counter + '>'); 
-      $('#input_pluralBox').append('<input type="hidden" name="loc06[]" id=loc06' + counter + '>'); 
-      $('#input_pluralBox').append('<input type="hidden" name="loc07[]" id=loc07' + counter + '>'); 
+      $('#input_pluralBox').append('<input type="hidden" name="loc01[]" id=loc1' + counter + '>');
+      $('#input_pluralBox').append('<input type="hidden" name="loc02[]" id=loc2' + counter + '>'); 
+      $('#input_pluralBox').append('<input type="hidden" name="loc03[]" id=loc3' + counter + '>'); 
+      $('#input_pluralBox').append('<input type="hidden" name="loc04[]" id=loc4' + counter + '>'); 
+      $('#input_pluralBox').append('<input type="hidden" name="loc05[]" id=loc5' + counter + '>'); 
+      $('#input_pluralBox').append('<input type="hidden" name="loc06[]" id=loc6' + counter + '>'); 
+      $('#input_pluralBox').append('<input type="hidden" name="loc07[]" id=loc7' + counter + '>'); 
     //複数レコード格納するために配列に要素を入れる
-      $('#loc01' + counter).val($('#zip01').val());
-      $('#loc02' + counter).val($('#pref01').val());
-      $('#loc03' + counter).val($('#addr01').val());
-      $('#loc04' + counter).val(save_route());
-      $('#loc05' + counter).val(save_station());
-      $('#loc06' + counter).val($('#range_up_to_closest_station').val());
-      $('#loc07' + counter).val($('#working_place_detail').val());
+      $('#loc1' + counter).val($('#zip01').val());
+      $('#loc2' + counter).val($('#pref01').val());
+      $('#loc3' + counter).val($('#addr01').val());
+      $('#loc4' + counter).val(save_route());
+      $('#loc5' + counter).val(save_station());
+      $('#loc6' + counter).val($('#range_up_to_closest_station').val());
+      $('#loc7' + counter).val($('#working_place_detail').val());
       code = 0;
 
       //初期化
@@ -221,9 +221,18 @@ $(function() {
       $('#station_route_list').empty();
   })
 
+    //勤務地を削除したときにDB登録用のデータも削除する
+    const hiddenLocationRemove = (counter) => {
+      for (let i = 1; i <= 7; i++){
+        $('#loc' + i + counter).remove();
+      }
+    }
+
 // 勤務地情報の項目削除
   $('#work-location-delete').click(function(){
     if (counter > 0) {
+      console.log(counter);
+      hiddenLocationRemove(counter);
       counter--;
     }
     $('#work-location-1').remove();

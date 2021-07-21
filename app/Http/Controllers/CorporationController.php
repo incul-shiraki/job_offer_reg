@@ -321,7 +321,7 @@ class CorporationController extends Controller
                       'overtime_hours' => $request->overtime_hours_detail,
                       'short_working_hours_system' => $request->shorter_working_hours_working,
                       'short_working_hours_system_detail' => $request->shorter_working_hours_working_detail,
-                      'selection_flow' => implode(",", $request->selection_flow),
+                      'selection_flow' => implode(",", $request->select_flow),
                       'selection_detail' => $request->selection_detail,
                       'telework' => $request->home_working,
                       'telework_info' => $request->home_working_detail,
@@ -442,9 +442,10 @@ class CorporationController extends Controller
         return null;
       }
       $temp_image = explode('/', $db_data);
-      $title_end = explode('_', $temp_image[2]);
+      // $title_end = explode('_', $temp_image[2]);
+      $title_end = substr($temp_image[2],16);
       $now = date('Ymd_His'); 
-      Storage::disk('public')->copy($temp_image[1]. '/' . $temp_image[2], $temp_image[1]. '/'. $now. '_'. $title_end[2]);
+      Storage::disk('public')->copy($temp_image[1]. '/' . $temp_image[2], $temp_image[1]. '/'. $now. '_'. $title_end);
       return $temp_image[0]. '/'. $temp_image[1]. '/'. $now. '_'. $title_end[2];
     }else{
       return $image;

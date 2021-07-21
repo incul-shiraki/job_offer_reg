@@ -20,7 +20,7 @@
             {{ csrf_field() }}
             <div class="form-group row"><label for="company_name" class="col-sm-3 col-form-label">会社名&nbsp;<span class="text-danger required">*</span></label>
               <div class="col-sm-9">
-                <label name="company_name" class="form-control" id="company_name"></label> 
+                <label name="company_name" class="form-control" id="company_name" style="border:none;"></label> 
                 <input type="hidden" name="company_name" id="company_name_h">
                 <!-- create時にコピーから作成した場合の値 -->
                 <input type="hidden" name="copyvalue" id="copyvalue">
@@ -28,59 +28,59 @@
             </div>
             <div class="form-group row"><label for="comp_add01" class="col-sm-3 col-form-label">会社住所&nbsp;<span class="text-danger required">*</span></br>都道府県</label>
               <div class="col-sm-9">
-                <label name="comp_add01" class="form-control" id="comp_add01"></label> 
+                <label name="comp_add01" class="form-control" id="comp_add01" style="border:none;"></label> 
                 <input type="hidden" name="comp_add01" id="comp_add01_h">
               </div>
             </div>
             <div class="form-group row"><label for="comp_add02"
                 class="col-sm-3 col-form-label">会社住所&nbsp;<span class="text-danger required">*</span></br>市区町村・番地・建物名</label>
               <div class="col-sm-9">
-                <label name="comp_add02" class="form-control" id="comp_add02"></label> 
+                <label name="comp_add02" class="form-control" id="comp_add02" style="border:none;"></label> 
                 <input type="hidden" name="comp_add02" id="comp_add02_h">
               </div>
             </div>
             <div class="form-group row"><label for="company_hp" class="col-sm-3 col-form-label">会社HP&nbsp;<span class="text-danger required">*</span></label>
               <div class="col-sm-9">
-                <label name="company_hp" class="form-control" id="company_hp"></label> 
+                <label name="company_hp" class="form-control" id="company_hp" style="border:none;"></label> 
                 <input type="hidden" name="company_hp" id="company_hp_h">
               </div>
             </div>
             <div class="form-group row">
               <label for="job1c" class="col-sm-3 col-form-label">業界1&nbsp;<span class="text-danger required">*</span></label>
               <div class="col-sm-9">
-                <label name="job1c" class="form-control" id="job1c"></label> 
+                <label name="job1c" class="form-control" id="job1c" style="border:none;"></label> 
                 <input type="hidden" name="job1c" id="job1c_h">
               </div>
             </div>
             <div class="form-group row">
               <label for="job2c" class="col-sm-3 col-form-label">業界2&nbsp;<span class="text-danger required">*</span></label>
               <div class="col-sm-9">
-                <label name="job2c" class="form-control" id="job2c"></label> 
+                <label name="job2c" class="form-control" id="job2c" style="border:none;"></label> 
                 <input type="hidden" name="job2c" id="job2c_h">
               </div>
             </div>
             <div class="form-group row"><label for="employee_number" class="col-sm-3 col-form-label">従業員数&nbsp;<span class="text-danger required">*</span></label>
               <div class="col-sm-9">
-                <label name="employee_number" class="form-control" id="employee_number"></label> 
+                <label name="employee_number" class="form-control" id="employee_number" style="border:none;"></label> 
                 <input type="hidden" name="employee_number" id="employee_number_h" value="">
               </div>
             </div>
             <div class="form-group row"><label for="foundation_date"
                class="col-sm-3 col-form-label">設立年月&nbsp;<span class="text-danger required">*</span></label>
               <div class="col-sm-9">
-                <label name="foundation_date" class="form-control" id="foundation_date" ></label> 
+                <label name="foundation_date" class="form-control" id="foundation_date"  style="border:none;"></label> 
                 <input type="hidden" name="foundation_date" id="foundation_date_h">
               </div>
             </div>
             <div class="form-group row"><label for="company_overview" class="col-sm-3 col-form-label">会社概要</label>
               <div class="col-sm-9">
-                <label class="form-control" name="company_overview" id="company_overview"></label> 
+                <label class="form-control" name="company_overview" id="company_overview" style="border:none;"></label> 
                 <input type="hidden" name="company_overview" id="company_overview_h">
               </div>
             </div>
             <div class="form-group row"><label for="business_guidance" class="col-sm-3 col-form-label">事業内容</label>
               <div class="col-sm-9"> 
-                <label class="form-control" name="business_guidance" id="business_guidance"></label> 
+                <label class="form-control" name="business_guidance" id="business_guidance" style="border:none;"></label> 
                 <input type="hidden" name="business_guidance" id="business_guidance_h">
               </div>
             </div>
@@ -131,7 +131,7 @@ $(function(){
     document.getElementById('job2c').innerHTML = @json($second[$corp[0]['industry2'] - 1]['name']);
     $('#job2c_h').val(@json($corp[0]['industry2']));
     //ロゴ
-    document.getElementById('image').src = @json($corp[0]['logo']).replace('public','storage');
+    document.getElementById('image').src = @json($corp[0]['logo']);
     $('#image_h').val(@json($corp[0]['logo']));
   } else {
     var http_word = 'http://localhost/';
@@ -167,7 +167,7 @@ $(function(){
     $('#job2c_h').val(temp['industry2']);
     //ロゴ
     document.getElementById('image').src = http_word + temp['logo'];
-    $('#image_h').val(http_word + temp['logo']);
+    $('#image_h').val(temp['logo']);
   }
 })
 
