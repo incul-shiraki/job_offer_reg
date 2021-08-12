@@ -139,3 +139,30 @@
 </div>
 <br>
 
+<script>
+let rec = @json($rec_info_re);
+//試験期間の有無に応じた詳細テキストエリアの表示非表示の切り替え
+$(function(){
+  $('#testing_period').change(function() {
+    let test_part = $(this).val();
+    if (test_part == 1 ) {
+      $('#test_part_detail').show();
+    }else if (test_part == 2) {
+      $('#test_part_detail').after().hide();
+    }
+  });
+
+  if (@json($rec_info_re) != 0) {
+    if(rec['trial_period'] == 1){
+      $('#test_part_detail').show();
+    }else if ($('#testing_period').val() == 2) {
+      $('#test_part_detail').after().hide();
+    }
+  }else{
+    $('#test_part_detail').after().hide();
+  } 
+  
+});
+
+
+</script>

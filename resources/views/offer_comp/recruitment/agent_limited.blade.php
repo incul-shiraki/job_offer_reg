@@ -96,7 +96,7 @@
           </div>
           <div class="form-group row"><label for="memo" class="col-sm-3 col-form-label"></label>
             <div class="col-sm-9">
-                <textarea class="form-control" name="memo" id="memo" rows="6"></textarea>
+                <textarea class="form-control" name="memo" id="memo" readonly rows="6"></textarea>
             </div>
           </div>
         </div>

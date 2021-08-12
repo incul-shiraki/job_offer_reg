@@ -427,28 +427,6 @@ $(function(){
   }
 });
 
-//試験期間の有無に応じた詳細テキストエリアの表示非表示の切り替え
-$(function(){
-  $('#testing_period').change(function() {
-    var test_part = $(this).val();
-    if (test_part == 1 ) {
-      $('#test_part_detail').show();
-    }else if (test_part == 2) {
-      $('#test_part_detail').after().hide();
-    }
-   });
-});
-
-$(function(){
-  if ($('#testing_period').val() == 1) {
-    $('#test_part_detail').show();
-  }else if ($('#testing_period').val() == 2) {
-    $('#test_part_detail').after().hide();
-  }else if ($('#testing_period').val() == "選択してください") {
-    $('#test_part_detail').after().hide();
-  } 
-});
-
 //労働時間制・固定残業代の制御
 $(function(){
   if ($('#working_hours_system_fixed_overtime_work_fare').val() == 1) {

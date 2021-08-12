@@ -132,9 +132,6 @@
 </div>
 <br>
 
-
-</select>
-
 <script>
 
 $(function() {

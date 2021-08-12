@@ -71,4 +71,8 @@ Route::get('/contact', 'PagesController@getContact');
 
    Route::get('/lead_offer_detail/{id}','CorporationController@show_lead_offer_detail')->name('lead_offer_detail');
   Route::post('/lead_offer_detail/{id}', 'OpenOfferController@sendMailLead');
+   
+   
 
+  Route::get('/project_registration','ProjectRegisterController@form')->name('project_registration');
+  Route::post('/project_registration/posts','ProjectRegisterController@create');

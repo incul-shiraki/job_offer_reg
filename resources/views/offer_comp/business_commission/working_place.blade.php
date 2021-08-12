@@ -5,20 +5,20 @@
   <div class="col-md-8 col-12">
     <div class="card">
       <div class="card-header">
-        <h3 class='card_title'>勤務地</h3>
+        <h3 class='card_title'>勤務地・リモート</h3>
       </div>
       <div class="card-body">
         <div class="masonry-item">
-          <div class="form-group row"><label for="home_working" class="col-sm-3 col-form-label">在宅勤務</label>
+          <div class="form-group row"><label for="home_working" class="col-sm-3 col-form-label">常駐・リモート&nbsp;<span class="text-danger required">*</span></label>
             <div class="col-sm-9">
               <select name="home_working" class="form-control" id="home_working">
-                <option value=1>選択しない</option>
-                <option value=2>テレワーク(常時)</option>
-                <option value=3>一部テレワーク</option>
+                <option value=1>常駐</option>
+                <option value=2>フルリモートワーク</option>
+                <option value=3>一部リモートワーク</option>
               </select>
             </div>
           </div>
-          <div class="form-group row" id="telework_detail"><label for="home_working_detail" class="col-sm-3 col-form-label">在宅勤務詳細</label>
+          <div class="form-group row" id="telework_detail"><label for="home_working_detail" class="col-sm-3 col-form-label">リモートワーク詳細</label>
             <div class="col-sm-9">
               <textarea class="form-control" name="home_working_detail" id="home_working_detail" rows="6"></textarea>
             </div>
